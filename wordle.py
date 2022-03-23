@@ -23,9 +23,7 @@ class Game():
         self.game_Clock = pygame.time.Clock()
         self.run = True
 
-        self.secret_word = words.WORDS[random.randint(
-            0, len(words.WORDS))].upper()
-        print(self.secret_word)
+        self.secret_word = words.WORDS[random.randint(0, len(words.WORDS))].upper()
 
         self.board = [
             [' ', ' ', ' ', ' ', ' '],
@@ -50,8 +48,7 @@ class Game():
         self.surface.fill(self.bg_color)
         for row in range(len(self.board)):
             for col in range(len(self.board[0])):
-                pygame.draw.rect(self.surface, (60, 60, 60), [
-                                 col * 85 + 10, row * 85 + 10, 75, 75], 2)
+                pygame.draw.rect(self.surface, (60, 60, 60), [col * 85 + 10, row * 85 + 10, 75, 75], 2)
 
                 if self.board[row][col] == self.secret_word[col] and row < self.attempt:
                     pygame.draw.rect(self.surface, (80, 140, 80), [
@@ -63,9 +60,9 @@ class Game():
                     pygame.draw.rect(self.surface, (60, 60, 60), [
                                      col * 85 + 10, row * 85 + 10, 75, 75])
 
-                text = self.font.render(
-                    self.board[row][col], True, (255, 255, 255))
+                text = self.font.render(self.board[row][col], True, (255, 255, 255))
                 self.surface.blit(text, (col * 85 + 30, row * 85 + 25))
+                
         pygame.display.update()
 
     def check_win(self):

@@ -51,14 +51,11 @@ class Game():
                 pygame.draw.rect(self.surface, (60, 60, 60), [col * 85 + 10, row * 85 + 10, 75, 75], 2)
 
                 if self.board[row][col] == self.secret_word[col] and row < self.attempt:
-                    pygame.draw.rect(self.surface, (80, 140, 80), [
-                                     col * 85 + 10, row * 85 + 10, 75, 75])
+                    pygame.draw.rect(self.surface, (80, 140, 80), [col * 85 + 10, row * 85 + 10, 75, 75])
                 elif self.board[row][col] in self.secret_word and row < self.attempt:
-                    pygame.draw.rect(self.surface, (180, 160, 60), [
-                                     col * 85 + 10, row * 85 + 10, 75, 75])
+                    pygame.draw.rect(self.surface, (180, 160, 60), [col * 85 + 10, row * 85 + 10, 75, 75])
                 elif row < self.attempt:
-                    pygame.draw.rect(self.surface, (60, 60, 60), [
-                                     col * 85 + 10, row * 85 + 10, 75, 75])
+                    pygame.draw.rect(self.surface, (60, 60, 60), [col * 85 + 10, row * 85 + 10, 75, 75])
 
                 text = self.font.render(self.board[row][col], True, (255, 255, 255))
                 self.surface.blit(text, (col * 85 + 30, row * 85 + 25))
